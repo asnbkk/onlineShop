@@ -1,0 +1,46 @@
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0.5rem 0 1.5rem;
+    width: 100%;
+    z-index: 3;
+    background: #FFFFFF;
+    box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar_item {
+    display: grid;
+    justify-items: center;
+    position: relative
+}
+.navbar_item__label {
+    font-size: 12px;
+    display: grid;
+    color: #0047FF;
+}
+.navbar_item i {
+    color: #868686;
+}
+.active i{
+    color: #0047FF;
+}
+.content {
+    padding:50px 0 70px;
+}
+.badge {
+    position: absolute;
+    font-size: 12px;
+    background: #FFD800;
+    margin-left: 5px;
+    margin-top: -3px;
+    line-height: 12px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

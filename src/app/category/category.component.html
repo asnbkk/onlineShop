@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="category-list">
+    <div *ngFor="let c of categories">
+        <div class="category-list_item" routerLink="/category/{{c.id}}">
+            {{c.name}}
+        </div>
+    </div>
+</div>

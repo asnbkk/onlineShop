@@ -1,0 +1,19 @@
+<app-header [inner]="true"></app-header>
+<div class="category-details">
+    <div class="title">{{ title.name }}</div>
+
+    <div class="subcategory">
+        <div class="subtitle-wrapper">
+        <div class="subtitle">Категория</div>
+        <div class="see-all" routerLink="/category/see-all/{{title.id}}">Посмотреть все</div>
+    </div>
+        <div class="category-details_list">
+            <div *ngFor="let p of products">
+                <div class="category-details_list__item">
+                    <app-product-card [product]="p"></app-product-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

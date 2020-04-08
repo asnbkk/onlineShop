@@ -1,0 +1,19 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+    margin: 0;
+    background: #F7F7F7;
+}
+button {
+    font-family: 'Montserrat', sans-serif;
+}
+:focus {
+    outline: 0;
+}
+::-webkit-scrollbar { width: 0 !important }
