@@ -6,6 +6,10 @@ import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { CategoryDetailsComponent } from './category-details/category-details.component';
 import { SeeAllComponent } from './see-all/see-all.component';
+import { CheckComponent } from './check/check.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -15,7 +19,12 @@ const routes: Routes = [
   {path: 'category/:id', component: CategoryDetailsComponent},
   {path: 'category/see-all/:id', component: SeeAllComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'cart', component: CartComponent},
+  {path: 'check', component: CheckComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'admin', component: AdminComponent},
+  
 ];
 
 @NgModule({

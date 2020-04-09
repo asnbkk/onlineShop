@@ -1,0 +1,6 @@
+<div class="login">
+    <input type="email" name="email" placeholder="email" [(ngModel)]="loginModel.email">
+    <input type="password" name="password" placeholder="password" [(ngModel)]="loginModel.password">
+    <button (click)="onSubmit()">Log In</button>
+    <div class="signup" routerLink="/signup">go to sign up</div>
+</div>
