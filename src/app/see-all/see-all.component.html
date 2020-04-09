@@ -1,0 +1,19 @@
+<app-header [inner]="true"></app-header>
+<div class="see-all">
+    <div class="title">{{ title.name }}</div>
+
+    <div class="subcategory">
+        <div class="subtitle-wrapper">
+            <div class="subtitle">Категория</div>
+            <div class="subtitle_counter">Нашлость результатов: {{products.length}}</div>
+        </div>
+        <div class="see-all_list">
+            <div *ngFor="let p of products">
+                <div class="see-all_list__item">
+                    <app-product-card [product]="p" [seeAll]="true"></app-product-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

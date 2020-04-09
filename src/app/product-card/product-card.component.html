@@ -1,0 +1,54 @@
+<div *ngIf="seeAll == false && cart == false">
+    <div class="card">
+        <div class="card_img"><img src="{{ product.img }}" alt=""></div>
+        <div class="card_add"><i class="material-icons" (click)="addItem(product)">add</i></div>
+        <div class="card_bottom">
+            <div class="card_bottom__left">
+                <div class="card_title">{{ product.name}}</div>
+                <div class="card_desc">{{ product.category }}</div>
+            </div>
+            <div class="card_price">{{ product.price}} ₸</div>
+        </div>
+    </div>
+</div>
+<div *ngIf="seeAll == true">
+    <div class="see-all">
+        <div class="see-all_img"><img src="{{product.img}}" alt=""></div>
+        <div class="see-all_text">
+            <div class="see-all_text__title">{{ product.name }}</div>
+            <div class="see-all_text__desc">{{ product.category }}</div>
+        </div>
+        <div class="see-all_price">{{ product.price }} ₸</div>
+        <div class="see-all_add"><i class="material-icons" (click)="addItem(product)">add</i></div>
+    </div>
+</div>
+<div *ngIf="cart == true">
+    <div class="cart">
+        <div class="see-all">
+            <div class="see-all_img"><img src="{{product.img}}" alt=""></div>
+            <div class="see-all_text">
+                <div class="see-all_text__title">{{ product.name }}</div>
+                <div class="see-all_text__desc">{{ product.category }}</div>
+            </div>
+            <div class="see-all_price">{{ product.price }} ₸</div>
+            <div class="see-all_delete"><i class="material-icons" (click)="deleteItem(product.name)">add</i></div>
+        </div>
+        <div class="cart_counter">
+            <div class="count">
+                <div class="cart_counter__title">Количество:</div>
+                <div class="count_toggle">
+                    <div class="count_toggle__decrease">
+                        <i class="material-icons" (click)="decreaseCounter()">remove</i>
+                    </div>
+                    {{product.quantity}}
+                    <div class="count_toggle__increase">
+                        <i class="material-icons" (click)="onAdd()">add</i>
+                    </div>
+                </div>
+            </div>
+            <div class="sum">
+                <div class="cart_counter__title">Сумма: {{product.totalPrice}} ₸</div>
+            </div>
+        </div>
+    </div>
+</div>

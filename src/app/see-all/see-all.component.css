@@ -1,0 +1,23 @@
+.see-all {
+    padding: 1rem;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.subtitle{
+    font-weight: bold;
+}
+.see-all_list {
+    margin-top: 1rem;
+}
+.subtitle-wrapper {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+.subtitle_counter {
+    font-size: 12px;
+    color: #868686;
+}

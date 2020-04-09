@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="card-wrapper">
+    <div class="title">Корзина</div>
+    <div class="cart">
+        <div *ngFor="let p of products">
+            <app-product-card [product]="p" [cart]="true"></app-product-card>
+        </div>
+    </div>
+</div>
+<div class="next">
+    <div class="total">
+       Итого: {{finalPrice}} ₸
+    </div><button>Продолжить</button>
+</div>
