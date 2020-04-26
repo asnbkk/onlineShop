@@ -1,8 +1,17 @@
 <app-header></app-header>
-<div class="category-list">
+<div class="category-list" *ngIf="dataLoaded">
     <div *ngFor="let c of categories">
-        <div class="category-list_item" routerLink="/category/{{c.id}}">
+        <div class="category-list_item" routerLink="/category/{{c.id}}" [@fadeIn]>
             {{c.name}}
         </div>
     </div>
 </div>
+
+<div class="category-list_skeleton" *ngIf="!dataLoaded">
+    <div *ngFor="let c of ['Cocasdfasdfasdfasdfk', 'dafadRaw', 'Foasdfasdfasdfo', 'Soon', 'asdfasdfasdfasdf']">
+        <div class="category-list_skeleton__item">
+            <div class="badge">{{c}}</div>
+        </div>
+    </div>
+</div>
+<!-- <app-navbar></app-navbar> -->

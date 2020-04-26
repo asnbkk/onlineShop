@@ -1,6 +1,17 @@
-<div class="login">
-    <input type="email" name="email" placeholder="email" [(ngModel)]="loginModel.email">
-    <input type="password" name="password" placeholder="password" [(ngModel)]="loginModel.password">
-    <button (click)="onSubmit()">Log In</button>
-    <div class="signup" routerLink="/signup">go to sign up</div>
+<app-header [inner]="true"></app-header>
+<div class="login-wrapper">
+    <div class="login">
+        <div class="title">Добро пожаловать!</div>
+        <div class="login_item">
+            <div class="label">E-mail</div>
+            <input type="email" name="username" [(ngModel)]="loginModel.username">
+        </div>
+        <div class="login_item">
+            <div class="label">Пароль</div>
+            <input type="password" name="password" [(ngModel)]="loginModel.password">
+        </div>
+
+        <button (click)="onSubmit()">Войти</button>
+        <div class="signup" routerLink="/signup">Еще не зарегистрированы?</div>
+    </div>
 </div>

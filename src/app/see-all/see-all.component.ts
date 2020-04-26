@@ -1,28 +1,56 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../category.service';
+import { ProductService } from '../product.service';
+import { trigger } from '@angular/animations';
+import { fadeIn } from '../router-animatins'
 
 
 @Component({
   selector: 'app-see-all',
   templateUrl: './see-all.component.html',
-  styleUrls: ['./see-all.component.css']
-})
-export class SeeAllComponent implements OnInit {
-  public title
-  public products = [
-    {"name": "product1", "category": "cat1", "img": "assets/img/1.jpg ", "price": "450", "quantity": 1, "totalPrice": 0},
-    {"name": "product2", "category": "cat1", "img": "assets/img/1.jpg ", "price": "450", "quantity": 1, "totalPrice": 0},
-    {"name": "product3", "category": "cat1", "img": "assets/img/1.jpg ", "price": "450", "quantity": 1, "totalPrice": 0}
+  styleUrls: ['./see-all.component.css'],
+  animations: [
+    trigger('fadeIn', fadeIn())
   ]
-  constructor(private route: ActivatedRoute, private categoryService: CategoryService) { }
+})
+export class SeeAllComponent implements OnInit, AfterViewChecked {
+  public title
+  public subcat
+  public products = []
+
+  public dataLoaded: boolean = false  
+
+  constructor(
+    private route: ActivatedRoute,
+    private categoryService: CategoryService,
+    private productService: ProductService  
+  ) { }
+
+
   public id = this.route.snapshot.paramMap.get('id')
+  public subcategory = decodeURI(this.route.snapshot.paramMap.get('subcat'))
+
+
+  ngAfterViewChecked() {
+    // window.scrollTo(0, 0);
+    }
   
   ngOnInit(): void {
+    window.scrollTo(0, 0);
+
     this.categoryService.getCategory()
       .subscribe(data => {
         this.title = data.find(o => o.id == this.id)
       })
+    
+    this.productService.GetBySubcat(this.subcategory).subscribe(data => {
+      console.log(this.subcategory)
+      this.products = data
+      setTimeout(() => {
+        this.dataLoaded = true
+      }, 300)
+    })
   }
 
 }

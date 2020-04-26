@@ -9,6 +9,7 @@ body {
                                   supported by Chrome, Opera and Firefox */
     margin: 0;
     background: #F7F7F7;
+    width: 100%;
 }
 button {
     font-family: 'Montserrat', sans-serif;

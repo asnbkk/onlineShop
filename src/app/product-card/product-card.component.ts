@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { api_url, root_url } from '../../assets/data/env'
 
 @Component({
   selector: 'app-product-card',
@@ -9,6 +10,9 @@ export class ProductCardComponent implements OnInit{
   @Input() product
   @Input() seeAll: boolean = false
   @Input() cart: boolean = false
+
+  public url = root_url
+  // public status
   constructor() { }
 
 
@@ -17,11 +21,18 @@ export class ProductCardComponent implements OnInit{
 
 
   addItem(data) {
+    
+
+
     let products = JSON.parse(localStorage.getItem("product") || "[]")
     console.log(products)
     console.log(data)
 
     if(products.find(o => o.name == data.name)){
+      // this.showMessage('exists')
+      // setTimeout(() => {
+      //   this.showMessage(null)
+      // }, 2000);
       let i = products.findIndex(o => o.name == data.name)
       products[i].quantity += 1
       console.log('Products id: ' + i)
@@ -35,16 +46,17 @@ export class ProductCardComponent implements OnInit{
   }
 
   deleteItem(productName) {
-    let products = JSON.parse(localStorage.getItem("product") || "[]")
-    for (var i = 0; i < products.length; i++) {
-      let items = products[i];
-      if (items.name == productName) {
-        products.splice(i, 1);
-        break
+      let products = JSON.parse(localStorage.getItem("product") || "[]")
+      for (var i = 0; i < products.length; i++) {
+        let items = products[i];
+        if (items.name == productName) {
+          products.splice(i, 1);
+          break
+        }
       }
-    }
-    products = JSON.stringify(products);
-    localStorage.setItem("product", products);
+      products = JSON.stringify(products);
+      localStorage.setItem("product", products);
+    
   }
 
   onAdd(): void {
@@ -66,5 +78,9 @@ export class ProductCardComponent implements OnInit{
       localStorage.setItem("product", JSON.stringify(products))
     }
   }
+
+  // showMessage(info) {
+  //   this.status = info
+  // }
 
 }

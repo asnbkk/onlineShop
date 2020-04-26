@@ -8,3 +8,21 @@
     align-items: center;
     border-bottom: 1px solid rgb(228, 228, 228);
 }
+.category-list_skeleton {
+    display: grid;
+}
+.category-list_skeleton__item {
+    height: 50px;
+    padding: 0 1rem;
+    display: grid;
+    align-items: center;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+.badge {
+    height: 16px;
+    display: grid;
+    justify-self: start;
+    border-radius: 5px;
+    background: #dedfe1;
+    color: transparent;
+}

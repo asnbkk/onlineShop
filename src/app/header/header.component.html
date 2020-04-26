@@ -1,8 +1,37 @@
-<div class="header">
-    <div *ngIf="inner == true">
-        <i class="material-icons" (click)="back()">keyboard_arrow_left</i>
+<div *ngIf="selectToggle == true">
+    <div class="toggle" (click)="selectToggle = false">
+        <div class="toggle_content">
+            <div class="toggle_title">
+                Выберите город
+            </div>
+            <div *ngFor="let city of cities">
+                <div class="toggle_item" (click)="selectCity(city)">{{city}}</div>
+            </div>
+        </div>
     </div>
-    <div *ngIf="inner == false"></div>
-    <div class="header_logo">shopname</div>
-    <div class="header_login" routerLink="/login"></div>
+</div>
+
+<!-- toggle -->
+
+<div [className]="home ? 'homeHeader' : 'header'">
+    <div class="icon">
+        <div *ngIf="inner == true">
+            <i class="material-icons" (click)="back()">keyboard_arrow_left</i>
+        </div>
+        <div *ngIf="inner == false">
+            <i class="material-icons" (click)="back()"></i>
+        </div>
+    </div>
+    <div *ngIf="home != true">
+        <div class="header_logo">be online</div>
+    </div>
+    <!-- <div class="header_city" (click)="selectToggle = true"> -->
+        <!-- {{ selectedCity }} --> 
+    <!-- </div> -->
+    <div *ngIf="!logged">
+        <div class="header_login" routerLink="/login">log in</div>
+    </div>
+    <div *ngIf="logged">
+        <div class="header_login" (click)="onLogout()">log out</div>
+    </div>
 </div>

@@ -1,5 +1,7 @@
 .category-details {
     padding: 1rem 0;
+    background: #F7F7F7;
+    min-height: calc(100vh - 70px - 52px - 2rem);
 }
 .title {
     font-size: 20px;
@@ -37,4 +39,67 @@
 .category-details_list__item {
     flex: 0 0 auto;
     margin-right: 1rem ;
+}
+.navbar {
+    position: absolute
+}
+
+
+/* skeleton */
+.cd_sc__title {
+    height: 24px;
+    width: 250px;
+    margin: 1rem 0 0 1rem;
+
+    border-radius: 5px;
+    background: #7e7e7e;
+}
+.cd_sc__subtitle {
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.cd_sc__subtitle___left {
+    height: 16px;
+    width: 120px;
+    margin-left: 1rem;
+    border-radius: 5px;
+    background: #dedfe1;
+}
+.cd_sc__subtitle___right {
+    display: grid;
+    justify-self: end;
+    background: rgba(0, 72, 255, 0.233);
+    width: 100px;
+    height: 12px;
+    margin-right: 1rem;
+    border-radius: 10px;
+}
+.cd_sc__card {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    padding-bottom: 1rem;
+}
+.cd_cs__card___item {
+    height: 182px;
+    width: 260px;
+    margin-right: 1rem;
+    position: relative;
+    flex: 0 0 auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background: #ffffff;
+}
+.item_button {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    background: #FFD800;
+    border-radius: 50%;
+    right: 10px;
+    top: 10px
 }

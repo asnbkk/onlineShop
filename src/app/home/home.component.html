@@ -1,1 +1,77 @@
-<app-header></app-header>
+<app-header [home]="true"></app-header>
+<div class="home">
+    <div class="home_header">
+            <!-- white -->
+        <svg class="white" width="574" height="504" viewBox="0 0 574 504" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+            <path d="M44.6055 258.447C25.5954 94.8839 100.93 23.4639 220.22 1.26494C339.51 -20.934 379.064 105.367 476.593 178.057C609.711 277.274 534.871 412.761 415.581 434.96C296.291 457.159 58.6778 379.525 44.6055 258.447Z" fill="white"/>
+            </g>
+            <defs>
+            <filter id="filter0_d" x="0" y="-48" width="573.499" height="551.819" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+            </filter>
+            </defs>
+            </svg>
+            <!-- yellow -->
+        <svg class="yellow" width="231" height="218" viewBox="0 0 231 218" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M230.892 113.881C225.587 191.379 184.445 218 127.151 218C69.8564 218 62.4051 156.01 23.4101 113.881C-29.8147 56.377 16.6316 0 73.926 0C131.22 0 234.819 56.5123 230.892 113.881Z" fill="#FFD800"/>
+            </svg>
+        <div class="hh_inner">
+            <div class="hh_logo">BE ONLINE</div>
+            <div class="hh_text">
+                все продукты в вашем телефоне
+            </div>
+            <div class="hh_button">
+                <button routerLink="/category">Смотреть катеоргии</button>
+            </div>
+        </div>
+    </div>
+    <div class="home_popular" *ngIf="dataLoaded">
+        <div class="category-details">
+            <div class="title" [@fadeIn]>Популярное</div>
+
+            <div *ngFor="let subcat of subcategories">
+                <div class="subcategory">
+                    <div class="subtitle-wrapper">
+                        <div class="subtitle"[@fadeIn] >{{subcat}}</div>
+                        <div class="see-all" [@fadeIn] (click)="onSee(subcat)">Посмотреть все</div>
+                    </div>
+                    <div class="category-details_list">
+                        <div *ngFor="let p of products">
+                            <div class="category-details_list__item" [@fadeIn] *ngIf="p.subcategory.name == subcat">
+                                <app-product-card [product]="p"></app-product-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!dataLoaded" class="ck">
+        <div class="ck_title"></div>
+        <div class="cd_sc__subtitle">
+            <div class="cd_sc__subtitle___left"></div>
+            <div class="cd_sc__subtitle___right"></div>
+        </div>
+    
+        <div class="cd_sc__card">
+            <div class="cd_cs__card___item"><div class="item_button"></div></div>
+            <div class="cd_cs__card___item"><div class="item_button"></div></div>
+            <div class="cd_cs__card___item"><div class="item_button"></div></div>
+    
+        </div>
+    </div>
+
+    <div class="home_info">
+
+    </div>
+</div>
+
+<!-- <app-navbar></app-navbar> -->

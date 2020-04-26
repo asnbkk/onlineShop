@@ -1,4 +1,21 @@
 <div class="search">
     <i class="material-icons">search</i>
-    <input type="text" placeholder="Поиск">
+    <input type="text" placeholder="Поиск" (focus)="onFocus()" (blur)="onBlur()"
+        (input)="onSearchChange($event.target.value)">
+</div>
+<div class="sr">
+    <div class="sr_cnt">
+        По вашему запросу мы нашли продуктов: {{searchRes.length}} шт.
+    </div>
+    <div *ngFor="let res of searchRes">
+        <app-product-card [product]="res" [seeAll]="true"></app-product-card>
+    </div>
+</div>
+
+
+
+<div *ngIf="focused">
+</div>
+<div *ngIf="!focused">
+    <app-navbar [focused]="false"></app-navbar>
 </div>

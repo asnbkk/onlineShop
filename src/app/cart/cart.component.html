@@ -7,8 +7,19 @@
         </div>
     </div>
 </div>
-<div class="next">
-    <div class="total">
-       Итого: {{finalPrice}} ₸
-    </div><button routerLink="/check">Продолжить</button>
+<div *ngIf="products.length > 0">
+    <div class="next">
+        <div class="total">
+            Итого: {{finalPrice}} ₸
+        </div><button routerLink="check">Продолжить</button>
+    </div>
 </div>
+<div *ngIf="products.length == 0">
+    <div class="message">
+        <div class="message_empty">
+            Корзина пока пуста :(
+        </div>
+    </div>
+</div>
+
+<!-- <app-navbar></app-navbar> -->

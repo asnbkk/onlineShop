@@ -1,5 +1,6 @@
 .see-all {
     padding: 1rem;
+    min-height: calc(100vh - 70px - 51px - 2rem);
 }
 .title {
     font-size: 20px;
@@ -20,4 +21,63 @@
 .subtitle_counter {
     font-size: 12px;
     color: #868686;
+}
+/* skeleton */
+.cd_cs {
+    height: 100%;
+    /* background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgb(199, 27, 27) 52%); */
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+.cd_sc__title {
+    height: 24px;
+    width: 250px;
+    margin: 1rem 0 0 1rem;
+
+    border-radius: 5px;
+    background: #7e7e7e;
+}
+.cd_sc__subtitle {
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.cd_sc__subtitle___left {
+    height: 16px;
+    width: 100px;
+    margin-left: 1rem;
+    border-radius: 5px;
+    background: #dedfe1;
+}
+.cd_sc__subtitle___right {
+    display: grid;
+    justify-self: end;
+    background: #dedfe1;
+    width: 130px;
+    height: 12px;
+    margin-right: 1rem;
+    border-radius: 10px;
+}
+
+.cd_cs__card {
+    height: 92px;
+    background: #dedfe1;
+    margin: 1rem 1rem 0 1rem;
+    border-radius: 10px;
+    position: relative;
+    display: grid;
+    align-items: center;
+    z-index: 1;
+}
+.card_badge {
+    position: absolute;
+    z-index: 1;
+    height: 24px;
+    width: 24px;
+    background: #FFD800;
+    border-radius: 50%;
+    right: 6px;
+    display: grid;
 }

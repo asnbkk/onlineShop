@@ -1,8 +1,46 @@
-<h3>Оформление заказа</h3>
+<app-header [inner]="true"></app-header>
+<div class="check">
+    <div class="title">Оформление заказа</div>
+    <div class="input-group">
+        <div class="input-grout_item">
+            <div class="label">Адрес доставки</div>
+            <input type="address" name="address" [(ngModel)]="checkInfo.address" (focus)="onFocus()" (blur)="onBlur()"
+                (click)="trigger = true">
+        </div>
+        <div class="input-grout_item">
+            <div class="label">Контактный номер</div>
+            <input type="phone" name="phone" [(ngModel)]="checkInfo.phone" (focus)="onFocus()" (blur)="onBlur()"
+                (click)="trigger = true">
+        </div>
+        <div class="input-grout_item">
+            <div class="label">Имя получателя</div>
+            <input type="name" name="name" [(ngModel)]="checkInfo.name" (focus)="onFocus()" (blur)="onBlur()"
+                (click)="trigger = true">
+        </div>
+        <label class="container">
+            <div class="text">Запомнить этот адрес</div>
+            <input type="checkbox" name="saveMe" [(ngModel)]="checkInfo.saveMe">
+            <span class="checkmark"></span>
+        </label>
 
-<input type="address" name="address" [(ngModel)]="checkInfo.address">
-<input type="phone" name="phone" [(ngModel)]="checkInfo.phone">
-<input type="name" name="name" [(ngModel)]="checkInfo.name">
+        <!-- bottom button below -->
 
+    </div>
+</div>
 
-<button (click)="onSend()">Заказать</button>
+<div *ngIf="focused">
+</div>
+<div *ngIf="!focused">
+    <div class="next">
+        <div class="next_total">
+            Итого: {{checkInfo.total}} ₸
+        </div>
+        <div *ngIf="full">
+            <button class="full" (click)="onSend()">Заказать</button>
+        </div>
+        <!-- <div *ngIf="!full"> -->
+            <!-- <button class="notFull" (click)="warning()">no full</button> -->
+        <!-- </div> -->
+    </div>
+    <app-navbar [focused]="false"></app-navbar>
+</div>

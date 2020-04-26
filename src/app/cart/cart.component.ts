@@ -20,8 +20,8 @@ export class CartComponent implements OnInit, DoCheck, OnChanges {
   
   ngDoCheck() {
     this.products = JSON.parse(localStorage.getItem('product') || "[]")
+    this.finalPrice = 0
     for (let product of this.products){
-      
       this.finalPrice += parseInt(product.totalPrice)
     }  
   }

@@ -1,19 +1,40 @@
 <app-header [inner]="true"></app-header>
-<div class="see-all">
-    <div class="title">{{ title.name }}</div>
+<div class="see-all" *ngIf="dataLoaded">
+    <div class="title" [@fadeIn]>{{ title.name }}</div>
 
     <div class="subcategory">
         <div class="subtitle-wrapper">
-            <div class="subtitle">Категория</div>
-            <div class="subtitle_counter">Нашлость результатов: {{products.length}}</div>
+            <div class="subtitle" [@fadeIn]>{{subcategory}}</div>
+            <div class="subtitle_counter" [@fadeIn]>Нашлость результатов: {{products.length}}</div>
         </div>
         <div class="see-all_list">
             <div *ngFor="let p of products">
                 <div class="see-all_list__item">
-                    <app-product-card [product]="p" [seeAll]="true"></app-product-card>
+                    <app-product-card [product]="p" [seeAll]="true" [@fadeIn]></app-product-card>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
+<div class="cd_cs" *ngIf="!dataLoaded">
+    <div class="cd_sc__title"></div>
+    <div class="cd_sc__subtitle">
+        <div class="cd_sc__subtitle___left"></div>
+        <div class="cd_sc__subtitle___right"></div>
+    </div>
+    <div class="cd_cs__card">
+        <div class="card_badge"></div>
+    </div>
+    <div class="cd_cs__card">
+        <div class="card_badge"></div>
+    </div>
+    <div class="cd_cs__card">
+        <div class="card_badge"></div>
+    </div>
+    <div class="cd_cs__card">
+        <div class="card_badge"></div>
+    </div>
+    <div class="cd_cs__card">
+        <div class="card_badge"></div>
+    </div>
 </div>
